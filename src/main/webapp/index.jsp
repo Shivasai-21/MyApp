@@ -2,17 +2,13 @@
 <%@ page session="true" %>
 <html>
 <head>
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>MyStore -- Modern E‑Commerce</title>
 
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="" crossorigin="anonymous">
-
-
-    <title>My E-Commerce Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
 
     <style>
         body { font-family: Arial; margin: 20px; }
@@ -37,8 +33,7 @@
             new Product("Headphones", 2000.0)
         );
 
-        // Handle cart in session
-        HttpSession session = request.getSession();
+        // Handle cart in session (use implicit session object)
         List<Product> cart = (List<Product>) session.getAttribute("cart");
         if (cart == null) {
             cart = new ArrayList<>();
@@ -84,4 +79,3 @@
     </div>
 </body>
 </html>
-
