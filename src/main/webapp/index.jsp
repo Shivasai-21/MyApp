@@ -621,7 +621,7 @@
 <!-- HERO BANNER -->
 <div class="hero-banner">
   <div class="hero-text-block">
-    <div class="hero-eyebrow">🎉 Grand Summer Sale 2025</div>
+    <div class="hero-eyebrow">🎉 Grand Summer Sale 2026</div>
     <h1 class="hero-heading">Deals so big,<br/><em>your wallet will thank you</em></h1>
     <p class="hero-sub">Up to 80% off on lakhs of products. Free delivery, easy returns, and Cash on Delivery available across India.</p>
     <div class="hero-ctas">
