@@ -1,5 +1,5 @@
 🚀 AWS CI/CD Pipeline – Jenkins + GitHub + Tomcat
-📌 Overview
+📌 Overview1
 
 This project demonstrates an end-to-end CI/CD pipeline built on AWS using Jenkins, GitHub, and Apache Tomcat. The pipeline automates build and deployment of a Java web application (WAR) with zero manual intervention.
 
@@ -66,6 +66,57 @@ Add Docker for containerization
 Integrate Kubernetes for orchestration
 Implement monitoring (Prometheus + Grafana)
 Add rollback strategy for failed deployments
+
+
+Jenkins Multi-Node CI/CD with Tomcat Deployment
+📌 Overview 2
+This project demonstrates a CI/CD pipeline using Jenkins with two dedicated nodes:
+- Dev Node → Deploys applications from the dev GitHub repository to a Tomcat server running in the development environment.
+- Prod Node → Deploys applications from the prod GitHub repository to a Tomcat server running in the production environment.
+The setup ensures environment isolation, automated builds, and continuous delivery with zero manual intervention.
+
+⚙️ Infrastructure Setup
+- Jenkins Master: Orchestrates pipelines and manages nodes.
+- Nodes:
+- jenkins-dev-node: Connected to Jenkins master, configured to deploy to Dev Tomcat.
+- jenkins-prod-node: Connected to Jenkins master, configured to deploy to Prod Tomcat.
+- Servers:
+- dev-server: Runs Tomcat for development deployments.
+- prod-server: Runs Tomcat for production deployments.
+
+🚀 Pipeline Workflow
+- Source Control
+- Dev code → github.com/<org>/<dev-repo>
+- Prod code → github.com/<org>/<prod-repo>
+- Build Stage
+- Jenkins pulls latest code from respective GitHub repos.
+- Maven/Gradle builds WAR files.
+- Deploy Stage
+- Dev Node copies WAR → /opt/tomcat/webapps/devapp/ on Dev server.
+- Prod Node copies WAR → /opt/tomcat/webapps/prodapp/ on Prod server.
+- Tomcat auto-deploys updated applications.
+- Verification
+- Jenkins pipeline runs smoke tests (HTTP 200 check).
+- Notifications sent on success/failure.
+
+📊 Achievements
+- Environment isolation: Separate GitHub repos and Jenkins nodes for dev vs prod.
+- Zero manual deployment: Jenkins pipelines handle build + deploy end-to-end.
+- Fast rollback: Previous WARs retained for quick redeployment.
+- Scalable design: Additional nodes can be added for staging/UAT environments.
+
+▶️ Usage
+- Trigger pipeline manually or via GitHub webhook (pollSCM or webhook).
+- Monitor build logs in Jenkins dashboard.
+- Access deployed apps:
+- Dev → http://<dev-server>:8080/devapp/
+- Prod → http://<prod-server>:8080/prodapp/
+
+📜 Notes
+- Ensure Jenkins nodes have SSH access to respective servers.
+- Tomcat must be configured with correct permissions for Jenkins user.
+- Use credentials binding in Jenkins for secure GitHub + server authentication.
+
 
 
 
