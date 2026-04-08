@@ -13,5 +13,3 @@
     <p>Request served from: <%= request.getRemoteAddr() %></p>
 </body>
 </html>
-
-
