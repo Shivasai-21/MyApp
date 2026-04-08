@@ -16,6 +16,7 @@
         <h1>Welcome to My Production App</h1>
     </header>
 
+
     <main>
         <h2>Dynamic Content</h2>
         <p>Hello, <c:out value="${userName}" default="Guest"/>!</p>
