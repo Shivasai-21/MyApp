@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>JSP Dev Server Check</h1>
-    <p>Welcome! This JSP page is running on: Dev Server
+    <p>Welcome! This JSP page is running on:
         <%= application.getServerInfo() %>
     </p>
     <p>Current time: <%= new java.util.Date() %></p>
