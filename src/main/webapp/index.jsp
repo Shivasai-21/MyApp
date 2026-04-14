@@ -548,7 +548,7 @@
 
 <!-- NAVBAR -->
 <nav>
-  <div class="nav-logo">Bazaar<span>X</span></div>
+  <div class="nav-logo">IndianBazaaR<span>X</span></div>
 
   <div class="nav-location">
     <span>📍 Deliver to</span>
