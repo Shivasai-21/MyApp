@@ -118,9 +118,45 @@ The setup ensures environment isolation, automated builds, and continuous delive
 - Use credentials binding in Jenkins for secure GitHub + server authentication.
 
 
+**🔹 Jenkins Pipeline – Containerized Deployment Activity**
+This project also includes a Jenkinsfile that defines the CI/CD pipeline as code.
+The pipeline automates the following steps:
 
+Checkout Stage
 
-🧠 Learnings
-End-to-end CI/CD pipeline setup without managed services
-Debugging real-world deployment issues
-Importance of automation in reducing deployment time
+Pulls the latest code from GitHub (main branch).
+
+Build Stage
+
+Uses Maven to package the Java application into a WAR file.
+
+Docker Stage
+
+Builds a Docker image with Tomcat and the WAR file.
+
+Containerizes the application for consistent deployments.
+
+Deploy Stage
+
+Removes any old container instance.
+
+Runs a new container with dynamic parameters (container-name, host-port).
+
+Exposes the application at:
+
+Code
+http://<EC2-public-IP>:<host-port>/
+Jenkins Project Activity Stage
+
+Logs Jenkins‑specific tasks such as job configuration, plugin validation, and reporting.
+
+Ensures pipeline visibility and traceability in Jenkins dashboard.
+
+📊 Outcome
+Application successfully containerized and deployed via Jenkins pipeline.
+
+Deployment URL simplified by renaming WAR to ROOT.war.
+
+Pipeline execution is fully automated, requiring no manual intervention.
+
+Demonstrates CI/CD best practices with GitHub → Jenkins → Docker → Tomcat workflow.
