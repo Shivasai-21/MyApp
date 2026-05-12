@@ -118,28 +118,24 @@ The setup ensures environment isolation, automated builds, and continuous delive
 - Tomcat must be configured with correct permissions for Jenkins user.
 - Use credentials binding in Jenkins for secure GitHub + server authentication.
 
-Project - 3
+📌 Project 3 – Jenkins Pipeline: Containerized Deployment Activity
+🔹 Overview
+This project demonstrates how a Java web application was containerized and deployed through Jenkins pipeline automation.
+The pipeline is defined as code in a Jenkinsfile, ensuring reproducibility, traceability, and zero manual intervention.
 
-**🔹 Jenkins Pipeline – Containerized Deployment Activity**
-This project also includes a Jenkinsfile that defines the CI/CD pipeline as code.
-The pipeline automates the following steps:
-
-Checkout Stage
-
+🔄 Pipeline Stages
+1. Checkout Stage
 Pulls the latest code from GitHub (main branch).
 
-Build Stage
+2. Build Stage
+Uses Maven to package the Java application into a .war file.
 
-Uses Maven to package the Java application into a WAR file.
-
-Docker Stage
-
+3. Docker Stage
 Builds a Docker image with Tomcat and the WAR file.
 
-Containerizes the application for consistent deployments.
+Containerizes the application for consistent deployments across environments.
 
-Deploy Stage
-
+4. Deploy Stage
 Removes any old container instance.
 
 Runs a new container with dynamic parameters (container-name, host-port).
@@ -148,14 +144,28 @@ Exposes the application at:
 
 Code
 http://<EC2-public-IP>:<host-port>/
-Jenkins Project Activity Stage
-
+5. Jenkins Project Activity Stage
 Logs Jenkins‑specific tasks such as job configuration, plugin validation, and reporting.
 
-Ensures pipeline visibility and traceability in Jenkins dashboard.
+Ensures pipeline visibility and traceability in the Jenkins dashboard.
 
 📊 Outcome
-Application successfully containerized and deployed via Jenkins pipeline.
+✅ Application successfully containerized and deployed via Jenkins pipeline.
+
+🌐 Deployment URL simplified by renaming WAR to ROOT.war.
+
+⚡ Pipeline execution is fully automated, requiring no manual intervention.
+
+🔄 Demonstrates CI/CD best practices with GitHub → Jenkins → Docker → Tomcat workflow.
+
+🧠 Key Learnings
+Importance of pipeline as code for reproducibility.
+
+Handling port conflicts and container redeployment strategies.
+
+Integrating Maven + Docker + Jenkins for seamless delivery.
+
+Strengthening DevOps skills with automation-first workflows.
 
 Deployment URL simplified by renaming WAR to ROOT.war.
 
