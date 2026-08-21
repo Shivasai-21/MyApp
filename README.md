@@ -9,8 +9,10 @@ CI/CD Tool: Jenkins
 Build Tool: Maven
 Application Server: Apache Tomcat 9
 Infrastructure: AWS EC2 (Linux)
+
 🔄 Pipeline Flow
 Developer → Git Push → GitHub Webhook → Jenkins Build → Maven Package → WAR → Tomcat Deployment → Live Application
+
 ⚙️ Infrastructure Setup
 2 EC2 Instances:
 Jenkins Server
@@ -25,6 +27,7 @@ Git & GitHub Webhooks
 Maven
 Apache Tomcat
 Linux
+
 🛠️ Implementation Steps
 1. Server Setup
 Launch EC2 instances
