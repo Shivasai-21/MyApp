@@ -1,6 +1,6 @@
 
 🚀 AWS CI/CD Pipeline – Jenkins + GitHub + Tomcat
-Project - 1
+Project - 01
 
 This project demonstrates an end-to-end CI/CD pipeline built on AWS using Jenkins, GitHub, and Apache Tomcat. The pipeline automates build and deployment of a Java web application (WAR) with zero manual intervention.
 
